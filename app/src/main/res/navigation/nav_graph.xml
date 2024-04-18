@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startGameFragment">
+
+    <fragment
+        android:id="@+id/startGameFragment"
+        android:name="com.example.navigationcomponentexample.StartGameFragment"
+        android:label="fragment_start_game"
+        tools:layout="@layout/fragment_start_game" >
+        <action
+            android:id="@+id/action_startGameFragment_to_duringGameFragment"
+            app:destination="@id/duringGameFragment" />
+        <argument
+            android:name="number"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="position"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/duringGameFragment"
+        android:name="com.example.navigationcomponentexample.DuringGameFragment"
+        android:label="fragment_during_game"
+        tools:layout="@layout/fragment_during_game" >
+        <action
+            android:id="@+id/action_duringGameFragment_to_endGameFragment"
+            app:destination="@id/endGameFragment" />
+        <argument
+            android:name="number"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/endGameFragment"
+        android:name="com.example.navigationcomponentexample.EndGameFragment"
+        android:label="fragment_end_game"
+        tools:layout="@layout/fragment_end_game" >
+        <action
+            android:id="@+id/action_endGameFragment_to_startGameFragment"
+            app:destination="@id/startGameFragment" />
+    </fragment>
+</navigation>
